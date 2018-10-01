@@ -3,3 +3,13 @@ module.exports = (req, res) => {
         res.redirect('/')
     })
 }
+
+// module.exports = (req, res) => {
+//     if(req.session.user)
+//     {
+//         req.session.destroy(() => {
+//             req.clearCookie('cookie-name');
+//             res.redirect('/')
+//         })
+//     }
+//     }

@@ -76,7 +76,7 @@ app.get("/auth/register",redirectIfAuthenticated,  createUserController);
 app.post("/users/register", redirectIfAuthenticated, storeUserController);
 app.get('/auth/login', redirectIfAuthenticated, loginController);
 app.post('/users/login',redirectIfAuthenticated, loginUserController);
-app.get("/auth/logout",  logoutController);
+app.get("/auth/logout", logoutController);
 
 
 
