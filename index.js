@@ -1,4 +1,6 @@
 const express = require('express')
+const edge = require("edge.js");
+
 const path = require('path')
 const expressEdge = require('express-edge')
 const mongoose = require('mongoose')
@@ -7,10 +9,6 @@ const fileUpload = require("express-fileupload");
 const expressSession = require('express-session');
 const connectMongo = require('connect-mongo');
 const connectFlash = require("connect-flash");
-const edge = require("edge.js");
-
-
-
 
 
 mongoose.connect('mongodb://localhost:27017/node-blog', { useNewUrlParser: true })
@@ -26,8 +24,6 @@ const storeUserController = require('./controllers/storeUser');
 const loginController = require("./controllers/login");
 const loginUserController = require('./controllers/loginUser');
 const logoutController = require("./controllers/logout");
-
-
 
 
 
@@ -80,7 +76,7 @@ app.get("/auth/register",redirectIfAuthenticated,  createUserController);
 app.post("/users/register", redirectIfAuthenticated, storeUserController);
 app.get('/auth/login', redirectIfAuthenticated, loginController);
 app.post('/users/login',redirectIfAuthenticated, loginUserController);
-app.get("/auth/logout", redirectIfAuthenticated, logoutController);
+app.get("/auth/logout",  logoutController);
 
 
 
