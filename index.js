@@ -24,7 +24,9 @@ const storeUserController = require('./controllers/storeUser');
 const loginController = require("./controllers/login");
 const loginUserController = require('./controllers/loginUser');
 const logoutController = require("./controllers/logout");
-
+const deleteController = require("./controllers/deletePost");
+const editPostController = require("./controllers/editPost")
+const updatePostController = require("./controllers/updatePost")
 
 
 
@@ -77,6 +79,9 @@ app.post("/users/register", redirectIfAuthenticated, storeUserController);
 app.get('/auth/login', redirectIfAuthenticated, loginController);
 app.post('/users/login',redirectIfAuthenticated, loginUserController);
 app.get("/auth/logout", logoutController);
+app.get("/post/delete/:id", deleteController);
+app.get("/post/edit/:id", editPostController)
+app.post("/post/update/:id", updatePostController)
 
 
 
